@@ -24,7 +24,7 @@ h1, h2, h3 {
 }
 
 p, input, li {
-  font-family: 'Helvetica';
+  font-family: "Helvetica Neue", Arial, sans-serif;
   color: #2a2a2a;
 }
 
@@ -43,6 +43,17 @@ h3 {
 p, li {
   font-size: 1.6rem;
   line-height: 1.5;
+}
+
+p, h1, h2, h3, li, a, span: {
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  font-weight: normal;
+}
+
+a: {
+  text-transform: none;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* || header layout */
@@ -76,7 +87,6 @@ nav a {
   font-size: 3rem;
   text-transform: capitalize;
   text-decoration: none;
-  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
   color: white;
 }
@@ -132,4 +142,24 @@ aside li {
 
 footer {
   margin-top: 10px;
+  padding-left: 30px;
+  background: #7d4f50;
+}
+
+footer p {
+  font-size: 2.25rem;
+  color: white;
+}
+
+footer a {
+  text-decoration: none;
+  color: #dbdbdb;
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
+.autobiography {
+  display: flex;
 }
