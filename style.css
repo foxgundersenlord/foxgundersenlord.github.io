@@ -165,3 +165,16 @@ footer a {
   display: flex;
   gap: 3%;
 }
+
+/* Gallery */
+
+.gallery {
+  column-width: 250px; /* Sets the base width for columns */
+  column-gap: 10px;
+}
+
+.gallery img {
+  width: 100%; /* Images adjust to the column width */
+  margin-bottom: 10px;
+  display: block; /* Prevents unwanted bottom spacing */
+}
