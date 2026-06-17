@@ -63,7 +63,7 @@ nav, article, aside, footer {
 }
 
 nav {
-  height: 65px;
+  height: 6.5%;
   background-color: #7d4f50;
   display: flex;
   margin-bottom: 0px;
@@ -128,12 +128,12 @@ article {
 
 aside {
   flex: 1;
-  margin-left: 10px;
+  margin-left: 1%;
   background-color: #ff80ff;
 }
 
 aside li {
-  padding-bottom: 10px;
+  padding-bottom: 1%;
 }
 
 .currentPage a {
@@ -141,9 +141,10 @@ aside li {
 }
 
 footer {
-  margin-top: 10px;
-  padding-left: 30px;
+  margin-top: 1%;
+  padding-left: 3%;
   background: #7d4f50;
+  height: 6.5%;
 }
 
 footer p {
@@ -162,5 +163,5 @@ footer a {
 
 .autobiography {
   display: flex;
-  padding: 1%;
+  gap: 3%;
 }
