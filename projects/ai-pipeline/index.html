@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang=en-US>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body>
+    <header>
+      <h1>Fox Gundersen-Lord</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="../../home">home</a></li>
+        <li><span class="currentPage"><a href="../../projects/">projects</a></span></li>
+        <li><a href="../../gallery/">gallery</a></li>
+        <li><a href="../../resume/">resume</a></li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+        <a class="back-link" href="../">← Back to all projects</a>
+        <h2>AI Pipeline — Kokoro TTS in C++</h2>
+        <p class="tagline">An offline, Python-free text-to-speech pipeline built from scratch.</p>
+        <img src="./header.png" alt="Screenshot of Github repository"/>
+
+        <h3>Overview</h3>
+        <p>This project reimplements the full Kokoro-82M text-to-speech pipeline in C++, including its grapheme-to-phoneme system built from scratch, so it runs entirely offline with no Python required at inference time. Given a string of text, it synthesizes natural 24kHz speech and writes a companion JSON file with per-word timestamps.</p>
+
+        <h3>STAR Write-Up</h3>
+        <dl class="star-list">
+          <dt>Situation</dt>
+          <dd>Often times generated audio needs to be paired with a transcript including timestamps for integration with larger audio-visual experiences.</dd>
+
+          <dt>Task</dt>
+          <dd>Build a self-contained C++ command-line tool that runs Kokoro-82M from a traced model, reimplements its text-processing pipeline without Python, and reports accurate per-word timestamps alongside the audio.</dd>
+
+          <dt>Action</dt>
+          <dd>Reimplemented Misaki's grapheme-to-phoneme pipeline in C++ from scratch: a text normalizer for numbers, currency, ordinals, and abbreviations; a CMU Pronouncing Dictionary lookup with an espeak-ng IPA fallback for out-of-vocabulary words; and a tokenizer matching Kokoro's vocabulary. Used LibTorch to run a TorchScript trace of the model, split multi-sentence input into separate synthesis calls, and stitched the resulting audio and timestamps back together with correctly offset timing.</dd>
+
+          <dt>Result</dt>
+          <dd>A command-line tool that synthesizes 24kHz speech entirely offline, writes per-word timestamps to a companion JSON file, builds without requiring a CUDA toolkit, and supports switching voices at runtime.
+            <div class="result-link"><a href="https://github.com/foxgundersenlord/kokorotts">https://github.com/foxgundersenlord/kokorotts</a></div>
+          </dd>
+        </dl>
+
+        <h3>Tech Stack</h3>
+        <ul class="tech-stack">
+          <li>C++17</li>
+          <li>LibTorch</li>
+          <li>CMake</li>
+          <li>Python (model export only)</li>
+          <li>espeak-ng</li>
+          <li>TorchScript</li>
+          <li>CMU Pronouncing Dictionary</li>
+        </ul>
+
+        <h3>Behind the Scenes</h3>
+        <p>The pipeline turns raw text into audio through a sequence of independent stages — normalize, split into sentences, convert to phonemes, tokenize, run the model, then write out the audio and timestamps:</p>
+        <pre class="code-block">text
+  │
+  ▼
+TextNormalizer        (numbers, currency, ordinals, abbreviations)
+  │
+  ▼
+sentence splitter
+  │
+  ▼
+G2P                    CMU dict lookup → ARPABET → tokens
+  │                    (espeak-ng IPA fallback for OOV words)
+  ▼
+Tokenizer              pad with leading/trailing token, cap at 512
+  │
+  ▼
+KokoroTTS model        TorchScript trace: (input_ids, ref_s) → (audio, timestamps)
+  │
+  ▼
+WavWriter + JSON       24kHz float32 WAV + per-word timestamps</pre>
+
+        <p>Each synthesis call returns timestamps like this, which made it possible to verify timing accuracy word by word during development:</p>
+        <pre class="code-block">[
+  {"word": "Hello", "start": 0.0125, "end": 0.4125},
+  {"word": "world", "start": 0.4625, "end": 0.9125}
+]</pre>
+
+        <div class="bts-grid">
+          <figure>
+            <img src="./output.png" alt="Screenshot of a terminal" />
+            <figcaption>Early test run synthesizing a sample sentence</figcaption>
+          </figure>
+          <figure>
+            <img src="./voices.png" alt="Screenshot of a terminal" />
+            <figcaption>Checking available voices before final testing</figcaption>
+          </figure>
+        </div>
+      </article>
+      <aside class="more-projects">
+        <h2>More Projects</h2>
+        <ul>
+          <li><a href="../3d-printing/">3D Printer Attachments</a></li>
+          <li><a href="../wizard-hat/">Wizard Hat</a></li>
+          <li><a href="../website/">This Website</a></li>
+        </ul>
+      </aside>
+    </main>
+    <footer>
+      <p>Contact Me: 
+        <a href="tel:+16132932229"><span class=material-symbols-outlined>Call</span>+1-613-293-2229</a>
+        <a href="mailto:foxgundersenlord@gmail.com"><span class=material-symbols-outlined>Email</span>foxgundersenlord@gmail.com</a>
+      </p>
+    </footer>
+  </body>
+</html>

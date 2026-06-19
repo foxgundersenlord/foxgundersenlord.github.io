@@ -1,4 +1,7 @@
 /* || General setup */
+article img {
+  width: 100%;
+}
 
 html, body {
   margin: 0;
@@ -129,11 +132,15 @@ article {
 aside {
   flex: 1;
   margin-left: 1%;
-  background-color: #ff80ff;
+  background-color: #7d4f50;
 }
 
 aside li {
   padding-bottom: 1%;
+}
+
+aside h2 {
+  color: white;
 }
 
 .currentPage a {
@@ -177,4 +184,198 @@ footer a {
   width: 100%; /* Images adjust to the column width */
   margin-bottom: 10px;
   display: block; /* Prevents unwanted bottom spacing */
+}
+
+/* || Portfolio additions */
+
+.section-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 4% 0;
+}
+
+.tagline {
+  font-size: 1.8rem;
+  color: #7d4f50;
+  font-style: italic;
+  margin-top: -1%;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 1.6rem;
+  margin-bottom: 2%;
+  color: #7d4f50;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Project index grid */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 3%;
+  margin-top: 3%;
+}
+
+.project-card {
+  border: 1px solid #ddd;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.project-card .placeholder-img {
+  margin-bottom: 4%;
+}
+
+.view-link {
+  font-weight: bold;
+  color: #7d4f50;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+/* Image / media placeholders the user will swap out */
+
+.placeholder-img {
+  background: repeating-linear-gradient(45deg, #f4f1ea, #f4f1ea 10px, #e8e4dc 10px, #e8e4dc 20px);
+  border: 1px dashed #999;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.4rem;
+  min-height: 160px;
+  padding: 5%;
+}
+
+.bts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3%;
+  margin: 3% 0;
+}
+
+.bts-grid figure {
+  margin: 0;
+}
+
+.bts-grid figcaption {
+  font-size: 1.4rem;
+  color: #555;
+  margin-top: 1%;
+}
+
+/* STAR write-up */
+
+.star-list {
+  margin: 3% 0;
+}
+
+.star-list dt {
+  font-weight: bold;
+  color: #7d4f50;
+  font-size: 1.8rem;
+  margin-top: 3%;
+}
+
+.star-list dd {
+  margin: 1% 0 0 0;
+}
+
+/* Tech stack tags */
+
+.tech-stack {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5%;
+  padding: 0;
+  margin: 3% 0;
+}
+
+.tech-stack li {
+  background: #7d4f50;
+  color: white;
+  padding: 0.8% 2%;
+  font-size: 1.4rem;
+}
+
+/* Callouts (e.g. collaboration / challenge highlights) */
+
+.callout {
+  background: #fdeefd;
+  border-left: 4px solid #7d4f50;
+  padding: 3%;
+  margin: 4% 0;
+}
+
+.callout h4 {
+  margin-top: 0;
+  color: #7d4f50;
+}
+
+/* Generic placeholder text the user should replace */
+
+.placeholder-text {
+  color: #888;
+  font-style: italic;
+}
+
+.result-link {
+  margin-top: 3%;
+  font-size: 1.6rem;
+}
+
+.more-projects ul {
+  list-style: none;
+  padding: 0;
+}
+
+.more-projects li {
+  margin-bottom: 2%;
+}
+
+.code-block {
+  background: #1d1a05;
+  color: #f4f1ea;
+  font-family: 'Courier New', monospace;
+  padding: 3%;
+  overflow-x: auto;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+/* Resume */
+
+.resume-section {
+  margin-bottom: 5%;
+}
+
+.resume-section h3 {
+  border-bottom: 2px solid #7d4f50;
+  padding-bottom: 1%;
+}
+
+.resume-entry {
+  margin-bottom: 3%;
+}
+
+.resume-entry .meta {
+  color: #888;
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-left: 1%;
+}
+
+figure img {
+  width: 100%;
 }

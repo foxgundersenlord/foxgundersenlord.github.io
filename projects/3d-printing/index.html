@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang=en-US>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body>
+    <header>
+      <h1>Fox Gundersen-Lord</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="../../home">home</a></li>
+        <li><span class="currentPage"><a href="../../projects/">projects</a></span></li>
+        <li><a href="../../gallery/">gallery</a></li>
+        <li><a href="../../resume/">resume</a></li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+        <a class="back-link" href="../">← Back to all projects</a>
+        <h2>3D Printer Attachments</h2>
+        <p class="tagline">A waste chute, scraper, and glue stick holder — designed, tested, and redesigned across two build cycles.</p>
+        <img src="./header.png" alt="Image depicting an accesorised 3D printer"/>
+
+        <h3>Overview</h3>
+        <p>Frequent 3D printing meant repeatedly hunting down the same tools and manually clearing filament waste after every print. This project designed a small family of attachments for a Bambu Lab P2S printer — a waste chute and bin, a scraper, and a glue stick holder — modeled in Fusion 360 against written specs and refined across two full design cycles based on what broke during testing.</p>
+
+        <h3>STAR Write-Up</h3>
+        <dl class="star-list">
+          <dt>Situation</dt>
+          <dd>Frequent 3D printing meant repeatedly hunting down the same handful of tools, and printers like the Bambu P2S regularly jettisoned filament waste that had to be collected by hand to keep the area usable.</dd>
+
+          <dt>Task</dt>
+          <dd>Design a small family of 3D-printed attachments: a waste chute and bin, a scraper, and a glue stick holder that could mount or tether directly to the printer.</dd>
+
+          <dt>Action</dt>
+          <dd>Modeled every part in Fusion 360 against the written specs, 3D printed each iteration in PLA, and problem-solved fit issues as they came up (e.g. cutting a misaligned locking key off with a handsaw, boring out an undersized hole on a drill press, and replacing a pin design whose threads kept snapping with a single continuous pin. ) A second design cycle reshaped the slide to stop waste from overshooting and replaced the original glue stick holder and magnetic scraper with one simpler, combined holder.</dd>
+
+          <dt>Result</dt>
+          <dd>A working waste-collection slide and bin, plus a combined scraper/glue-stick holder, installed and tested at the print station — including a water-load test on the bin and a real-scrap test on the slide — with a documented punch list for further iteration (bin wobble, holder filament cost, weak magnetic mounting).
+          </dd>
+        </dl>
+
+        <h3>Tech Stack</h3>
+        <ul class="tech-stack">
+          <li>Autodesk Fusion 360</li>
+          <li>Bambu Lab P2S 3D Printer</li>
+          <li>PLA Filament</li>
+          <li>Handsaw &amp; Drill Press</li>
+          <li>Magnets</li>
+          <li>Grip Tape</li>
+        </ul>
+
+        <h3>Key Specs</h3>
+        <p>A few of the constraints the waste bin had to meet: hold roughly 0.00675m³ of material with 1cm of headroom for comfortable emptying, support the weight equivalent of 0.01m³ of PLA without breaking, extend no more than 5cm from the back of the printer, and print in under 3 hours.</p>
+
+        <h3>Behind the Scenes — Design Cycle 1</h3>
+        <div class="bts-grid">
+          <figure>
+            <img src="./1.png" alt="[Figure 1: Underside of waste bin — early draft]"/ >
+            <figcaption>Figure 1: Underside of waste bin (early draft)</figcaption>
+          </figure>
+          <figure>
+            <img src="./13.png" alt="[Figure 13: Comparison of slide's key and the bin's hole]"/ >
+            <figcaption>Figure 13: The key/hole misalignment problem</figcaption>
+          </figure>
+          <figure>
+            <img src="./17.png" alt="[Figure 17: Male pins with threads snapped off]"/ >
+            <figcaption>Figure 17: Pin threads snapping during assembly</figcaption>
+          </figure>
+          <figure>
+            <img src="./20.png" alt="[Figure 20: Second set of continuous pins]"/ >
+            <figcaption>Figure 20: Redesigned continuous pin — no assembly required</figcaption>
+          </figure>
+        </div>
+
+        <h3>Behind the Scenes — Design Cycle 2</h3>
+        <div class="bts-grid">
+          <figure>
+            <img src="./40.png" alt="[Figure 40: New curved slide design]"/ >
+            <figcaption>Figure 40: Reshaped slide to stop waste overshoot</figcaption>
+          </figure>
+          <figure>
+            <img src="./41.png" alt="[Figure 41: Combined gluestick/scraper holder draft]"/ >
+            <figcaption>Figure 41: One simplified holder replacing two complex parts</figcaption>
+          </figure>
+          <figure>
+            <img src="./53.png" alt="[Figure 53: Slide iteration 2 test result]"/ >
+            <figcaption>Figure 53: Cycle 2 slide test — overshoot fixed</figcaption>
+          </figure>
+        </div>
+      </article>
+      <aside class="more-projects">
+        <h2>More Projects</h2>
+        <ul>
+          <li><a href="../ai-pipeline/">AI Pipeline</a></li>
+          <li><a href="../wizard-hat/">Wizard Hat</a></li>
+          <li><a href="../website/">This Website</a></li>
+        </ul>
+      </aside>
+    </main>
+    <footer>
+      <p>Contact Me: 
+        <a href="tel:+16132932229"><span class=material-symbols-outlined>Call</span>+1-613-293-2229</a>
+        <a href="mailto:foxgundersenlord@gmail.com"><span class=material-symbols-outlined>Email</span>foxgundersenlord@gmail.com</a>
+      </p>
+    </footer>
+  </body>
+</html>
